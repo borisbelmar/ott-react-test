@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card from './components/Card';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+          theme: 'mediastream'
+      }
+      this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+      this.setState({
+          theme: event.target.value
+      });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className={`container ${this.state.theme}-theme`}>
+          <h2>Tema actual</h2>
+          <input type="text" value={this.state.theme} onChange={this.handleChange}/>
+          <Card/>
+          <Card/>
+          <Card/>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -19,13 +19,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className={`container ${this.state.theme}-theme`}>
-          <h2>Tema actual</h2>
-          <input type="text" value={this.state.theme} onChange={this.handleChange}/>
-          <Card/>
-          <Card/>
-          <Card/>
+      <div className={`${this.state.theme}-theme`}>
+        <div className="main">
+          <div className="container">
+            <h2>Tema actual</h2>
+            <input type="text" value={this.state.theme} onChange={this.handleChange}/>
+            <Card/>
+            <Card/>
+            <Card/>
+          </div>
         </div>
       </div>
     );

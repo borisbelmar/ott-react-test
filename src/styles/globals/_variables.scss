@@ -1,0 +1,74 @@
+// Colores
+$mediastream: hsl(78, 100%, 42%) !default;
+$black: hsl(0, 0%, 4%) !default;
+$white: hsl(0, 0%, 100%) !default;
+
+// Fuentes
+$font-family: 'Poppins', sans-serif !default;
+$base-size: 16px !default;
+
+// Temas
+
+$themes: (
+    (
+        name: 'mediastream',
+        type: 'light',
+        primaryColor: $mediastream,
+        secondaryColor: $mediastream,
+        primaryFont: $font-family,
+        secondaryFont: $font-family,
+        base: $white,
+        contrast: $black 
+    ),
+    (
+        name: 'dark-mediastream',
+        type: 'dark',
+        primaryColor: $mediastream,
+        secondaryColor: $mediastream,
+        primaryFont: $font-family,
+        secondaryFont: $font-family,
+        base: $black,
+        contrast: $white 
+    ),
+    (
+        name: 'ice-green',
+        type: 'light',
+        primaryColor: hsl(150, 50, 50),
+        secondaryColor: hsl(250, 90, 70),
+        primaryFont: ('Verdana', sans-serif),
+        secondaryFont: ('Poppins', sans-serif),
+        base: $white,
+        contrast: $black 
+    ),
+    (
+        name: 'lava',
+        type: 'light',
+        primaryColor: hsl(10, 70, 50),
+        secondaryColor: hsl(30, 70, 60),
+        primaryFont: ('Helvetica', sans-serif),
+        secondaryFont: ('Times New Roman', serif),
+        base: $white,
+        contrast: $black 
+    ),
+    (
+        name: 'lavender',
+        type: 'light',
+        primaryColor: hsl(280, 70, 70),
+        secondaryColor: hsl(150, 60, 70),
+        primaryFont: ('Roboto', sans-serif),
+        secondaryFont: ('Montserrat', sans-serif),
+        base: $white,
+        contrast: $black 
+    ),
+    (
+        name: 'dust',
+        type: 'light',
+        primaryColor: hsl(30, 60, 50),
+        secondaryColor: hsl(50, 60, 70),
+        primaryFont: ('Roboto', sans-serif),
+        secondaryFont: ('Arvo', sans-serif),
+        base: $white,
+        contrast: $black  
+    )
+);
+

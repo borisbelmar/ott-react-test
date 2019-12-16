@@ -1,0 +1,18 @@
+.main {
+    $attr: (
+        'font-family': 'primaryFont',
+        'color': 'contrast',
+        'background': (
+            'shade': (
+                'color': 'base',
+                'percent': 10%
+            )
+        )
+    );
+    @include themeBuilder($attr);
+    font-size: $base-size;
+}
+
+img {
+    max-width: 100%;
+}

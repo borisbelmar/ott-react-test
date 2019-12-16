@@ -3,7 +3,7 @@ import React from 'react';
 class Card extends React.Component {
     render() {
         return(
-            <div className="Card">
+            <div className="card">
                 <div className="card-image" style={{backgroundImage: `url(/assets/img/mandalorian.jpeg)`}}>
                     <div className="card-featured">Nuevo</div>
                     <div className="card-time">34:22</div>

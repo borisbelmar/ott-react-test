@@ -1,45 +1,33 @@
-/// Comprueba si existe una mutación de color en los atributos
-/// @access private
-/// @param {Map} $attr - Objeto de atributos del componente
-/// @return {Boolean}
-@function hasColorMutation($attr) {
-    @if (map-has-key($attr, 'tint') or map-has-key($attr, 'shade') or map-has-key($attr, 'fade')) {
-        @return true;
-    } @else {
-        @return false;
-    }
-}
+/** OTT Theme Builder v1.0 **/
 
 /// Genera una mutación de color
 /// @access private
-/// @param {Map} $mutationMap - Objeto con los atributos de la mutación
+/// @param {List} $mutationList - Lista con los atributos de la mutación
 /// @param {Map} $theme - Objeto de configuración del tema
 /// @return {Color}
-@function colorMutator($mutationMap, $theme) {
-    $type: map-get($theme, 'type');
-    @if map-has-key($mutationMap, 'tint') {
-        $tintMap: map-get($mutationMap, 'tint');
-        $color: map-get($theme, map-get($tintMap, 'color'));
-        $percent: map-get($tintMap, 'percent');
-        @if $type == 'light' {
-            @return mix(white, $color, $percent);
-        } @else {
-            @return mix(black, $color, $percent);
-        }
-    } @else if map-has-key($mutationMap, 'shade') {
-        $shadeMap: map-get($mutationMap, 'shade');
-        $color: map-get($theme, map-get($shadeMap, 'color'));
-        $percent: map-get($shadeMap, 'percent');
-        @if $type == 'light' {
-            @return mix(black, $color, $percent);
-        } @else {
-            @return mix(white, $color, $percent);
-        }
-    } @else if map-has-key($mutationMap, 'fade') {
-        $fadeMap: map-get($mutationMap, 'fade');
-        $color: map-get($theme, map-get($fadeMap, 'color'));
-        $opacity: map-get($fadeMap, 'opacity');
-        @return adjust-color($color, $alpha: $opacity);
+
+@function colorMutator($mutationList, $theme) {
+    @if map-get($theme, 'type') == 'light' {
+        $base: white !global;
+        $invert: black !global;
+    } @else if map-get($theme, 'type') == 'dark' {
+        $base: black !global;
+        $invert: white !global;
+    } @else {
+        @warn "#{map-get($theme, 'type')}: Theme's type isn't valid";
+    }
+    $mutationType: nth($mutationList, 1);
+    $color: map-get($theme, nth($mutationList, 2));
+    $mutator: nth($mutationList, 3);
+    @if $mutationType == 'tint' {
+        @return mix($base, $color, $mutator);
+    } @else if $mutationType == 'shade' {
+        @return mix($invert, $color, $mutator);
+    } @else if $mutationType == 'fade' {
+        @return adjust-color($color, $alpha: $mutator);
+    } @else {
+        @warn "#{$mutationType}: Isn't a valid color mutation";
+        @return null;
     }
 }
 
@@ -48,6 +36,7 @@
 /// @param {Map} $gradientMap - Objeto con los atributos del gradiente
 /// @param {Map} $theme - Objeto de configuración del tema
 /// @return {Gradient}
+
 @function themeGradient($gradientMap, $theme) {
     $type: map-get($gradientMap, 'type');
     $fromColor: map-get($theme, map-get($gradientMap, 'fromColor'));
@@ -59,9 +48,10 @@
     @if $type == 'linear' {
         @return linear-gradient($deg, $fromColorWithAlpha 0%, $toColorWithAlpha 100%);
     } @else if $type == 'radial' {
-        @return radial-gradient(unquote($radialParams), $fromColorWithAlpha 0%, $toColorWithAlpha 100%)
+        @return radial-gradient(unquote($radialParams), $fromColorWithAlpha 0%, $toColorWithAlpha 100%);
     } @else {
         @warn "Gradient's type isn't implemented yet";
+        @return null;
     }
 }
 
@@ -80,10 +70,10 @@
                         $gradientMap: map-get($value, 'gradient');
                         #{$key}: themeGradient($gradientMap, $theme);
                     } 
-                    @else if hasColorMutation($value) {
-                        #{$key}: colorMutator($value, $theme);
-                    }
                 } 
+                @else if type-of($value) == 'list' {
+                    #{$key}: colorMutator($value, $theme);
+                }
                 @else {
                     #{$key}: map-get($theme, $value);
                 }

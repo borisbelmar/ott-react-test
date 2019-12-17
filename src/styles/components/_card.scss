@@ -1,3 +1,4 @@
+
 .card {
     $attr: (
         'background': 'base'
@@ -25,6 +26,7 @@
             'background-color': 'secondaryColor',
             'font-family': 'primaryFont'
         );
+        color: $black;
         position: absolute;
         top: 0;
         left: 0;
@@ -33,15 +35,10 @@
     }
     &-time {
         $attr: (
-            'background-color': (
-                'fade': (
-                    'color': 'contrast',
-                    'opacity': -0.5
-                )
-            ),
-            'color': 'base',
             'font-family': 'primaryFont'
         );
+        background-color: fade($black, -0.5);
+        color: $white;
         position: absolute;
         top: 0;
         right: 0;
@@ -65,12 +62,7 @@
     &-description {
         $attr: (
             'font-family': 'secondaryFont',
-            'color': (
-                'tint': (
-                    'color': 'contrast',
-                    'percent': 50%
-                )
-            )
+            'color': ('tint', 'contrast', 50%)
         );
         margin-bottom: 1rem;
         @include themeBuilder($attr);
@@ -92,12 +84,7 @@
         }
         .date {
             $attr: (
-                'color': (
-                    'tint': (
-                        'color': 'contrast',
-                        'percent': 50%
-                    )
-                ),
+                'color': ('tint', 'contrast', 50%),
                 'font-family': 'secondaryFont'
             );
             font-size: 0.9rem;

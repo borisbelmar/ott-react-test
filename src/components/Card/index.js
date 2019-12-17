@@ -5,7 +5,7 @@ class Card extends React.Component {
     render() {
         return(
             <div className="card">
-                <div className="card-image" style={{backgroundImage: `url(/assets/img/mandalorian.jpeg)`}}>
+                <div className="card-image" style={{backgroundImage: `url('https://testbbelmar.imgix.net/mandalorian.jpeg?auto=format&q=50&w=600')`}}>
                     <div className="card-featured">Nuevo</div>
                     <div className="card-time">34:22</div>
                     <div className="card-play"></div>

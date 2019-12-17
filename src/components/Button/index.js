@@ -9,7 +9,7 @@ class Button extends React.Component {
 
     render() {
         return(
-            <button onClick={this.sendData} className={`${this.props.theme.slug}-theme`}> 
+            <button onClick={this.sendData}> 
                 {this.props.theme.name}
             </button>
         )

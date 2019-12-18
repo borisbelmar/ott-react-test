@@ -1,0 +1,28 @@
+button {
+    $attr: (
+        'color': 'contrast',
+        'background-color': 'primaryColor',
+        'font-family': 'primaryFont'
+    );
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 12px adjust-color($black, $alpha: -0.9);
+    cursor: pointer;
+    @include themeBuilder($attr);
+    &:hover {
+        $attr: (
+            'background-color': ('shade', 'primaryColor', 15%)
+        );
+        @include themeBuilder($attr);
+    }
+    &:focus, &:active {
+        $attr: (
+            'background-color': ('shade', 'primaryColor', 40%),
+            'color': 'base'
+        );
+        @include themeBuilder($attr);
+    }
+}

@@ -1,0 +1,16 @@
+@import '../../styles/globals/all';
+
+.title {
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: tint(black, 40%);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.link {
+    color: hsl(170, 70, 40);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}

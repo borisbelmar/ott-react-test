@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Mandalorian",
+        "description": "Candy sugar plum sugar plum cake lips text",
+        "featured": true,
+        "duration": "21:29",
+        "date": "22/12/2019",
+        "img": "assets/img/mandalorian.jpeg",
+        "rating": 4
+    },
+    {
+        "id": 2,
+        "name": "Akira",
+        "description": "Candy sugar plum sugar plum cake lips text",
+        "featured": false,
+        "duration": "1:29:04",
+        "date": "22/12/2019",
+        "img": "assets/img/akira.jpg",
+        "rating": 3
+    },
+    {
+        "id": 3,
+        "name": "The Witcher",
+        "description": "Candy sugar plum sugar plum cake lips text",
+        "featured": true,
+        "duration": "25:08",
+        "date": "22/12/2019",
+        "img": "assets/img/witcher.jpg",
+        "rating": 5
+    },
+    {
+        "id": 4,
+        "name": "Dude, where's my car",
+        "description": "Candy sugar plum sugar plum cake lips text",
+        "featured": false,
+        "duration": "1:29:08",
+        "date": "22/12/2019",
+        "img": "assets/img/dudewheresmycar.jpg",
+        "rating": 1
+    }
+]

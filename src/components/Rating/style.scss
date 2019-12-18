@@ -1,0 +1,14 @@
+@import "../../styles/globals/all";
+
+.rating {
+    .star {
+        $attr: (
+            'fill': 'primaryColor'
+        );
+        width: 1.25rem;
+        height: 1.25rem;
+        display: inline-block;
+        margin-right: 0.25rem;
+        @include themeBuilder($attr);
+    }
+}

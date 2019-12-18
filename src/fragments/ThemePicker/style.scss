@@ -1,14 +1,6 @@
-@import "styles/globals/all";
+@import '../../styles/globals/all';
 
-.container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    padding: 2rem;
-    box-sizing: border-box;
-}
-
-h2 {
+.ThemePicker h2 {
     $attr: (
         'color': 'primaryColor',
         'font-family': 'primaryFont'
@@ -18,7 +10,7 @@ h2 {
     @include themeBuilder($attr);
 }
 
-input {
+.ThemePicker input {
     $attr: (
         'border-color': 'primaryColor'
     );

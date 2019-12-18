@@ -1,0 +1,25 @@
+@import "../../styles/globals/all";
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.test {
+    input {
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        border: 2px solid;
+        margin: 1rem auto 1rem auto;
+        font-size: 1rem;
+        box-sizing: border-box;
+        width: 100%;
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}

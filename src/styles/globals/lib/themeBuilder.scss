@@ -79,5 +79,21 @@
                 }
             }
         }
+        @at-root .#{$name}-theme-scoped & {
+            @each $key, $value in $attr {
+                @if type-of($value) == 'map' {
+                    @if map-has-key($value, 'gradient') {
+                        $gradientMap: map-get($value, 'gradient');
+                        #{$key}: themeGradient($gradientMap, $theme) !important;
+                    } 
+                } 
+                @else if type-of($value) == 'list' {
+                    #{$key}: colorMutator($value, $theme) !important;
+                }
+                @else {
+                    #{$key}: map-get($theme, $value) !important;
+                }
+            }
+        }
     }
 };

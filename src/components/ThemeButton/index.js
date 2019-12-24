@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-class Badge extends React.Component {
+class ThemeButton extends React.Component {
     
     sendData = () => {
         this.props.click(this.props.theme.slug);
@@ -18,4 +18,4 @@ class Badge extends React.Component {
     }
 }
 
-export default Badge;
+export default ThemeButton;

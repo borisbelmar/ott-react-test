@@ -15,7 +15,6 @@ function Rating(props) {
                 <svg xmlns="http://www.w3.org/2000/svg" key={i} viewBox="0 0 15 15" className="star"><path d="M7.5 10.37L4.74 12l.73-3.14L3 6.77l3.22-.28 1.25-3 1.26 3 3.27.29L9.54 8.9l.73 3.1zm7.35-4.53l-5.28-.46L7.5.52 5.43 5.39l-5.28.45 4 3.48L3 14.48l4.5-2.74 4.5 2.74-1.2-5.16z"></path></svg>
             );
         }
-        
     }
 
     return (

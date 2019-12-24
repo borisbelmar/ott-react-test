@@ -1,20 +1,11 @@
 import axios from 'axios';
 
 const controller = {
-    async getSeries() {
+    async getCategories() {
         try {
-            let res = await axios.get('/sampleData/series.json');
+            let res = await axios.get('/sampleData/categories.json');
             return res.data;
         } catch(error) {
-            return null;
-        }
-    },    
-    async getThemes() {
-        try {
-            let res = await axios.get('/sampleData/themes.json');
-            return res.data;
-        } catch(err) {
-            console.log(err);
             return null;
         }
     }

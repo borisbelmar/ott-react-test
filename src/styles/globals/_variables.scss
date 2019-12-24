@@ -1,11 +1,18 @@
 // Colores
 $mediastream: hsl(78, 100%, 42%) !default;
-$black: hsl(0, 0%, 4%) !default;
+$black: hsl(0, 0%, 0%) !default;
 $white: hsl(0, 0%, 100%) !default;
 
 // Fuentes
 $font-family: 'Poppins', sans-serif !default;
 $base-size: 16px !default;
+
+// Layout
+
+$xl-break: 1200px;
+$lg-break: 992px;
+$md-break: 768px;
+$sm-break: 576px;
 
 // Temas
 

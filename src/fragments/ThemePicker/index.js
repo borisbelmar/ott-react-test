@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import Badge from '../../components/Badge';
+import ThemeButton from '../../components/ThemeButton';
 
 class ThemePicker extends React.Component {
 
@@ -15,7 +15,7 @@ class ThemePicker extends React.Component {
                 <input type="text" value={this.props.selected} readOnly/>
                 {this.props.themes.map(
                     (theme, index) => {
-                        return <Badge key={index} theme={theme} click={this.sendData}/>
+                        return <ThemeButton key={index} theme={theme} click={this.sendData}/>
                     })
                 }
             </div>

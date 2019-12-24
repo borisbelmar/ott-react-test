@@ -1,0 +1,20 @@
+@import "../../styles/globals/all";
+
+.Like {
+    .heart {
+        position: absolute;
+        right: 0.75rem;
+        bottom: 1rem;
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        margin-right: 0.25rem;
+        cursor: pointer;
+    }
+    .unfilled {
+        fill: white;
+    }
+    .filled {
+        fill: white;
+    } 
+}

@@ -58,6 +58,7 @@
 /// Genera los atributos del componente por cada tema configurado
 /// @access public
 /// @param {Map} $attr - Objeto de atributos del componente
+/// @param {String} $scope - String para declarar si el tema será solamente global o se le agrega la variante scoped (Solamente local) además de la global.
 
 @mixin themeBuilder($attr, $scope: 'global') {
     @each $theme in $themes {

@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Películas",
+        "img": "/assets/img/cat-bg2.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Boxeo",
+        "img": "/assets/img/cat-bg1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Infantil",
+        "img": "/assets/img/cat-bg3.jpg"
+    }
+]

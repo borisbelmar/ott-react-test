@@ -1,0 +1,37 @@
+@import '../../styles/globals/all';
+
+$categoryCardHeight: 160px;
+
+.CategoryCard {
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    max-width: 600px;
+    height: $categoryCardHeight;
+    position: relative;
+    z-index: 0;
+    &::before {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%);
+        z-index: -1;
+        content: "";
+    }
+    h3 {
+        $attr: (
+            'font-family': 'primaryFont'
+        );
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: $categoryCardHeight;
+        z-index: 4;
+        color: white;
+        @include themeBuilder($attr);
+    }
+}

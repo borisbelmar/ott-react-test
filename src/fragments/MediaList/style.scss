@@ -1,11 +1,11 @@
 @import '../../styles/globals/all';
 
-.CategoryList {
+.MediaList {
     @extend %flex;
     flex-direction: row;
     margin: 1rem 0;
     flex-wrap: nowrap;
-    .CategoryItem {
+    .MediaItem {
         flex: 1;
         margin-right: 0.5rem;
         min-width: 260px;
@@ -15,7 +15,7 @@
     }
     @media screen and (max-width: $md-break) {
         flex-direction: column;
-        .CategoryItem {
+        .MediaItem {
             margin-right: 0rem;
             margin-bottom: 0.5rem;
         }

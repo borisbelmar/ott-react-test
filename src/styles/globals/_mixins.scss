@@ -10,3 +10,17 @@
     -o-transition-duration: $duration;
     transition-duration: $duration;
 }
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin scale($scale) {
+    -moz-transform: scale($scale);
+    -webkit-transform: scale($scale);
+    -o-transform: scale($scale);
+    -ms-transform: scale($scale);
+    transform: scale($scale);
+}

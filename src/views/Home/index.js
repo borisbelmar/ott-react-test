@@ -1,28 +1,60 @@
 import React from 'react';
-import controller from './controller';
+import { getCategories, getSeries, getThemes } from './controller';
+import { ThemeContext } from '../../context/ThemeContext';
+
 import DefaultLayout from '../../layouts/DefaultLayout';
 import CategoryList from '../../fragments/CategoryList';
+import MediaList from '../../fragments/MediaList';
+import ThemePicker from '../../fragments/ThemePicker';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            categories: []
+            categories: [],
+            series: [],
+            themes: []
         }
     }
 
     async componentDidMount() {
-        this.setState({categories: await controller.getCategories()});
+        this.setState({
+            categories: await getCategories(),
+            series: await getSeries(),
+            themes: await getThemes()
+        });
     }
 
     render() {
         return(
             <DefaultLayout>
-                <div className="Home mediastream-theme">
-                    <CategoryList categories={this.state.categories}/>
+                <div className="Home">
+                    <div className="container">
+                        <ThemePicker 
+                            selected={this.context.selectedTheme} 
+                            themes={this.state.themes} 
+                            receivedData={this.context.onReceivedData} 
+                        />
+                    </div>
+                    <MediaList 
+                        title="Recomendado" 
+                        medias={this.state.series} 
+                        noPlay 
+                    />
+                    <MediaList 
+                        title="Contenidos interesantes" 
+                        medias={this.state.series}
+                    />
+                    <CategoryList 
+                        categories={this.state.categories}
+                    />
                 </div>
             </DefaultLayout>
         ) 
     }
 }
+
+Home.contextType = ThemeContext;
+
+export default Home;

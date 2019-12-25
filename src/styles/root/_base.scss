@@ -1,13 +1,37 @@
-.main {
-    $attr: (
-        'font-family': 'primaryFont',
-        'color': 'contrast',
-        'background': ('shade', 'base', 10%)
-    );
-    @include themeBuilder($attr);
-    font-size: $base-size;
-}
-
 img {
     max-width: 100%;
+}
+
+.container {
+    margin: auto;
+    
+    @media screen and (min-width: $xl-break){
+        width: 95%;
+    }
+    @media screen and (min-width: $lg-break) and (max-width: $xl-break - 1px){
+        width: 95%;
+    }
+    @media screen and (min-width: $md-break) and (max-width: $lg-break - 1px) {
+        width: 90%;
+    }
+    @media screen and (max-width: $md-break) {
+        width: 90%;
+        padding: 0 5%;
+    }
+    
+}
+
+.section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    $attr: (
+        'font-family': 'primaryFont',
+        'color': ('tint', 'contrast', 30%)
+    );
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    @include themeBuilder($attr);
 }

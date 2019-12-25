@@ -1,1 +1,11 @@
 @import "../../styles/globals/all";
+
+.DefaultLayout {
+    $attr: (
+        'font-family': 'primaryFont',
+        'color': 'contrast',
+        'background': ('shade', 'base', 3%)
+    );
+    @include themeBuilder($attr);
+    font-size: $base-size;
+}

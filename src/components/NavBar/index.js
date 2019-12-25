@@ -5,7 +5,7 @@ export default function NavBar() {
     return (
         <nav className="NavBar clearfix">
             <div className="menu">
-                <img src="/assets/img/bars.svg" />
+                <img src="/assets/img/bars.svg" alt="Menu"/>
             </div>
             <div className="logo">
                 <img src="/assets/img/logo.svg" alt="OTTNEXT Logo" />

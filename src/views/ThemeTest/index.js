@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import ThemePicker from '../../fragments/ThemePicker';
 import { getSeries, getThemes } from './controller';
-import MediaItem from '../../fragments/MediaItem'
+import MediaItem from '../../components/MediaItem';
 
 class ThemeTest extends React.Component {
     

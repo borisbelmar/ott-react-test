@@ -7,5 +7,5 @@
         'background': ('shade', 'base', 3%)
     );
     @include themeBuilder($attr);
-    font-size: $base-size;
+    font-size: $font-size;
 }

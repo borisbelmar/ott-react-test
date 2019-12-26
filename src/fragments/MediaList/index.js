@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import MediaItem from '../../fragments/MediaItem';
+import MediaItem from '../../components/MediaItem';
 
 export default function MediaList(props) {
     return (

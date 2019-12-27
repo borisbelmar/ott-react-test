@@ -11,7 +11,7 @@ export default function MediaList(props) {
             <div className="MediaList">
                 {props.medias.map( media => {
                     return (
-                        <MediaItem key={media.id} media={media} noPlay={props.noPlay}/>
+                        <MediaItem key={media.id} media={media} noPlay={props.noPlay} variation={props.variation}/>
                     )
                 })}
             </div>

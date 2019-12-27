@@ -40,7 +40,8 @@ class Home extends React.Component {
                     <MediaList 
                         title="Recomendado" 
                         medias={this.state.series} 
-                        noPlay 
+                        noPlay
+                        variation="minimal"
                     />
                     <MediaList 
                         title="Contenidos interesantes" 

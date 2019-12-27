@@ -5,7 +5,7 @@
     flex-direction: row;
     margin: 1rem 0;
     flex-wrap: nowrap;
-    .MediaItem {
+    .MediaItem, .MediaItem-minimal {
         flex: 1;
         margin-right: 0.5rem;
         min-width: 260px;
@@ -15,7 +15,7 @@
     }
     @media screen and (max-width: $md-break) {
         flex-direction: column;
-        .MediaItem {
+        .MediaItem, .MediaItem-minimal {
             margin-right: 0rem;
             margin-bottom: 0.5rem;
         }
